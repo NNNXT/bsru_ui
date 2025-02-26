@@ -1,3 +1,4 @@
+import 'package:bsru_ui/page2.dart';
 import 'package:flutter/material.dart';
 
 class Page1 extends StatelessWidget {
@@ -27,7 +28,14 @@ class Page1 extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Page2(),
+              ),
+            );
+          },
           child: const Text('เข้าสู่ระบบ'),
         ),
       ),
