@@ -1,3 +1,4 @@
+import 'package:bsru_ui/page4.dart';
 import 'package:flutter/material.dart';
 
 class Page3 extends StatelessWidget {
@@ -39,7 +40,15 @@ class Page3 extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Page4(),
+              ),
+              (Route<dynamic> route) => false,
+            );
+          },
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
