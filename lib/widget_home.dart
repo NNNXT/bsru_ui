@@ -1,3 +1,4 @@
+import 'package:bsru_ui/page5.dart';
 import 'package:flutter/material.dart';
 
 class WidgetHome extends StatelessWidget {
@@ -20,27 +21,43 @@ class WidgetHome extends StatelessWidget {
     return ListView(
       children: List.generate(
         chatData.length,
-        (index) => ListTile(
-          leading: ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.network(
-              chatData[index]['id'] ?? '',
-              width: 50,
-              height: 50,
-              fit: BoxFit.fill,
+        (index) => GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Page5(
+                  id: chatData[index]['id'] ?? '',
+                  name: chatData[index]['first_name'] ?? '',
+                  gender: chatData[index]['gender'] ?? '',
+                ),
+              ),
+            );
+          },
+          child: Card(
+            child: ListTile(
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.network(
+                  chatData[index]['id'] ?? '',
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              title: Text(chatData[index]['first_name'] ?? ''),
+              subtitle: Text(chatData[index]['gender'] ?? ''),
+              trailing: chatData[index]['gender'] == 'Male'
+                  ? const Icon(
+                      Icons.male,
+                      color: Colors.blue,
+                    )
+                  : const Icon(
+                      Icons.female,
+                      color: Colors.pink,
+                    ),
             ),
           ),
-          title: Text(chatData[index]['first_name'] ?? 'BSRU'),
-          subtitle: Text(chatData[index]['gender'] ?? ''),
-          trailing: chatData[index]['gender'] == 'Male'
-              ? const Icon(
-                  Icons.male,
-                  color: Colors.blue,
-                )
-              : const Icon(
-                  Icons.female,
-                  color: Colors.pink,
-                ),
         ),
       ),
     );
