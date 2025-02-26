@@ -6,35 +6,39 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String phoneNumber = '';
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
+      body: Center(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'เข้าสู่ระบบ OPENTALK',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'ใส่หมายเลขโทรศัพท์ของอุปกรณ์ที่คุณใช้อยู่ในขณะนี้',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'โปรดอ่านและยอมรับข้อกำหนดการใช้บริการและนโยบายความเป็นส่วนตัวของ OPENCHAT ก่อนใส่หมายเลขโทรศัพท์แล้วแตะปุ่มไปต่อ',
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
-              SizedBox(height: 40),
-              Text(
+              const SizedBox(height: 40),
+              const Text(
                 'เบอร์โทรศัพท์',
                 style: TextStyle(fontSize: 20),
               ),
               TextField(
                 keyboardType: TextInputType.phone,
+                onChanged: (value) {
+                  phoneNumber = value;
+                },
               )
             ],
           ),
@@ -47,7 +51,9 @@ class Page2 extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Page3(),
+                builder: (context) => Page3(
+                  phoneNumber: phoneNumber,
+                ),
               ),
             );
           },

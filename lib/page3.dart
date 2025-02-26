@@ -9,27 +9,27 @@ class Page3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
+      body: Center(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'ใส่รหัสยืนยัน',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
-                'รหัสยืนยันอยู่ในข้อความใน SMS ที่ส่งไปยังหมายเลขโทรศัพท์',
+                'รหัสยืนยันอยู่ในข้อความใน SMS ที่ส่งไปยังหมายเลขโทรศัพท์ $phoneNumber',
+                style: const TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                'รหัสยืนยัน',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 40),
-              Text(
-                'เบอร์โทรศัพท์',
-                style: TextStyle(fontSize: 20),
-              ),
-              TextField(
+              const TextField(
                 keyboardType: TextInputType.phone,
               )
             ],
@@ -43,7 +43,7 @@ class Page3 extends StatelessWidget {
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('ยืนยันเบอร์โทรศัพท์'),
+              Text('ยืนยัน'),
               SizedBox(width: 16),
               Icon(
                 Icons.arrow_forward_ios,
