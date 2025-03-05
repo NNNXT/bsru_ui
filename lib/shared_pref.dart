@@ -37,6 +37,8 @@ class _SharedPrefState extends State<SharedPref> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('asset/images.jpeg'),
+            const SizedBox(height: 8),
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
