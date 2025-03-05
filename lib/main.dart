@@ -1,4 +1,4 @@
-import 'package:bsru_ui/qrcode.dart';
+import 'package:bsru_ui/form_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const QRCodeScreen());
+        home: const FormScreen());
   }
 }
